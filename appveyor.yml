@@ -1,8 +1,9 @@
 image: Visual Studio 2022
-stack: python 3.10
 
 install:
-  - pip install pyinstaller cryptography
+  - python -m pip install --upgrade pip
+  - pip install --only-binary :all: cryptography
+  - pip install pyinstaller
 
 build_script:
   - pyinstaller --onefile script.py
